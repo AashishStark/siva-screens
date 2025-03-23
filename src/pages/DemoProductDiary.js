@@ -17,6 +17,13 @@ import bag9 from '../images/schl_labels/labels_9.png';
 import bag10 from '../images/schl_labels/labels_10.png';
 import bag11 from '../images/schl_labels/labels_11.png';
 import bag12 from '../images/schl_labels/labels_12.png';
+import bag13 from '../images/schl_labels/labels_13.png';
+import bag14 from '../images/schl_labels/labels_14.png';
+import bag15 from '../images/schl_labels/labels_15.png';
+import bag16 from '../images/schl_labels/labels_16.png';
+import bag17 from '../images/schl_labels/labels_17.png';
+import bag18 from '../images/schl_labels/labels_18.png';
+
 
 
 import './DemoProject.css'
@@ -26,7 +33,8 @@ import ScrollToTop from '../components/ScrollToTop';
 const DemoProductBags = () => {
     const [selectedImage, setSelectedImage] = useState(null);
 
-    const images_1 = [bag1, bag2, bag3, bag4];
+    const images_0 = [bag13, bag14, bag15, bag16];
+    const images_1 = [bag17, bag18, bag3, bag4];
     const images_2 = [bag5, bag6, bag7, bag8];
     const images_3 = [bag9, bag10, bag11, bag12];
     // const images_4 = [bag13, bag14, bag15, bag16];
@@ -50,6 +58,35 @@ const DemoProductBags = () => {
                 <div className="flex items-center justify-center bg-gray-100 min-h-[30vh] m-0">
                     <div className="collName bg-teal-500 w-full max-w-4xl p-16 mt-16 rounded-3xl shadow-2xl">
                         <h1>School Label Collections</h1>
+                    </div>
+                </div>
+
+                <div className="flex items-center justify-center bg-gray-100 w-full h-[75vh]">
+                    <div className="card-container bg-green-300 w-full max-w-8xl rounded-3xl shadow-2xl">
+                        <div className="flex space-x-24">
+                            {images_0.map((image, index) => (
+                                <div key={index} className="card bg-white rounded-xl shadow-lg overflow-hidden">
+                                    <img
+                                        src={image}
+                                        alt={`Image ${index + 1}`}
+                                        className={`img3 object-cover rounded-t ${selectedImage === image ? 'scale-100' : 'scale-[0.8]'} transition duration-300 ease-in-out ${selectedImage && selectedImage !== image ? 'opacity-50 blur-sm' : ''}`}
+                                        onClick={() => handleImageClick(image)}
+                                    />
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* If an image is clicked, display it in a larger view */}
+                        {selectedImage && (
+                            <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-20 z-10" onClick={closeImage}>
+                                <img
+                                    src={selectedImage}
+                                    alt="Selected"
+                                    // className="max-w-[80%] max-h-[80%] object-contain"
+                                    className="max-w-[80%] max-h-[80%] object-contain transition-all duration-500 ease-in-out"
+                                />
+                            </div>
+                        )}
                     </div>
                 </div>
 
