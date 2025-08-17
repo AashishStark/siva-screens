@@ -43,6 +43,19 @@ import bag37 from '../images/d_cut_png/bag38.png';
 import bag38 from '../images/d_cut_png/bag39.png';
 import bag39 from '../images/d_cut_png/bag40.png';
 import bag40 from '../images/d_cut_png/bag41.png';
+import bag41 from '../images/d_cut_png/bag42.png';
+import bag42 from '../images/d_cut_png/bag43.png';
+import bag43 from '../images/d_cut_png/bag44.png';
+import bag44 from '../images/d_cut_png/bag45.png';
+import bag45 from '../images/d_cut_png/bag46.png';
+import bag46 from '../images/d_cut_png/bag47.png';
+import bag47 from '../images/d_cut_png/bag48.png';
+import bag48 from '../images/d_cut_png/bag49.png';
+import bag49 from '../images/d_cut_png/bag50.png';
+import bag50 from '../images/d_cut_png/bag51.png';
+import bag51 from '../images/d_cut_png/bag52.png';
+import bag52 from '../images/d_cut_png/bag53.png';
+import bag53 from '../images/d_cut_png/bag54.png';
 
 import ScrollToTop from '../components/ScrollToTop';
 
@@ -59,6 +72,9 @@ const DemoProductCalendar = () => {
     const images_6 = [bag21, bag22, bag23, bag24];
     const images_7 = [bag25, bag26, bag27, bag28];
     const images_8 = [bag29, bag30, bag31, bag32];
+    const images_11 = [bag41, bag42, bag43, bag44];
+    const images_12 = [bag45, bag46, bag47, bag48];
+    const images_13 = [bag49, bag50, bag51, bag52];
 
     const handleImageClick = (image) => {
         setSelectedImage(image);
@@ -77,6 +93,93 @@ const DemoProductCalendar = () => {
                 <div className="flex items-center justify-center bg-gray-100 min-h-[30vh] m-0">
                     <div className="collName bg-teal-500 w-full max-w-4xl p-16 mt-16 rounded-3xl shadow-2xl">
                         <h1>BOPP Woven Bags Collections</h1>
+                    </div>
+                </div>
+
+                <div className="flex items-center justify-center bg-gray-100 w-full h-[75vh]">
+                    <div className="card-container bg-green-300 w-full max-w-8xl rounded-3xl shadow-2xl">
+                        <div className="flex space-x-24">
+                            {images_11.map((image, index) => (
+                                <div key={index} className="card bg-white rounded-xl shadow-lg overflow-hidden">
+                                    <img
+                                        src={image}
+                                        alt={`Image ${index + 1}`}
+                                        className={`img3 object-cover rounded-t ${selectedImage === image ? 'scale-100' : 'scale-[0.8]'} transition duration-300 ease-in-out ${selectedImage && selectedImage !== image ? 'opacity-50 blur-sm' : ''}`}
+                                        onClick={() => handleImageClick(image)}
+                                    />
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* If an image is clicked, display it in a larger view */}
+                        {selectedImage && (
+                            <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-20 z-10" onClick={closeImage}>
+                                <img
+                                    src={selectedImage}
+                                    alt="Selected"
+                                    // className="max-w-[80%] max-h-[80%] object-contain"
+                                    className="max-w-[80%] max-h-[80%] object-contain transition-all duration-500 ease-in-out"
+                                />
+                            </div>
+                        )}
+                    </div>
+                </div>
+
+                <div className="flex items-center justify-center bg-gray-100 w-full h-[75vh]">
+                    <div className="card-container bg-green-300 w-full max-w-8xl rounded-3xl shadow-2xl">
+                        <div className="flex space-x-24">
+                            {images_12.map((image, index) => (
+                                <div key={index} className="card bg-white rounded-xl shadow-lg overflow-hidden">
+                                    <img
+                                        src={image}
+                                        alt={`Image ${index + 1}`}
+                                        className={`img3 object-cover rounded-t ${selectedImage === image ? 'scale-100' : 'scale-[0.8]'} transition duration-300 ease-in-out ${selectedImage && selectedImage !== image ? 'opacity-50 blur-sm' : ''}`}
+                                        onClick={() => handleImageClick(image)}
+                                    />
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* If an image is clicked, display it in a larger view */}
+                        {selectedImage && (
+                            <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-20 z-10" onClick={closeImage}>
+                                <img
+                                    src={selectedImage}
+                                    alt="Selected"
+                                    // className="max-w-[80%] max-h-[80%] object-contain"
+                                    className="max-w-[80%] max-h-[80%] object-contain transition-all duration-500 ease-in-out"
+                                />
+                            </div>
+                        )}
+                    </div>
+                </div>
+
+                <div className="flex items-center justify-center bg-gray-100 w-full h-[75vh]">
+                    <div className="card-container bg-green-300 w-full max-w-8xl rounded-3xl shadow-2xl">
+                        <div className="flex space-x-24">
+                            {images_13.map((image, index) => (
+                                <div key={index} className="card bg-white rounded-xl shadow-lg overflow-hidden">
+                                    <img
+                                        src={image}
+                                        alt={`Image ${index + 1}`}
+                                        className={`img3 object-cover rounded-t ${selectedImage === image ? 'scale-100' : 'scale-[0.8]'} transition duration-300 ease-in-out ${selectedImage && selectedImage !== image ? 'opacity-50 blur-sm' : ''}`}
+                                        onClick={() => handleImageClick(image)}
+                                    />
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* If an image is clicked, display it in a larger view */}
+                        {selectedImage && (
+                            <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-20 z-10" onClick={closeImage}>
+                                <img
+                                    src={selectedImage}
+                                    alt="Selected"
+                                    // className="max-w-[80%] max-h-[80%] object-contain"
+                                    className="max-w-[80%] max-h-[80%] object-contain transition-all duration-500 ease-in-out"
+                                />
+                            </div>
+                        )}
                     </div>
                 </div>
 
